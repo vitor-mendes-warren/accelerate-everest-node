@@ -6,7 +6,7 @@ import createCustomer from '../controllers/user-controller.js' //! a
 import customerValidators from '../validator/customer-validator.js'
 
 const router = Router()
-router.post('/', body('email').isEmail(), createCustomer)
+router.post('/', customerValidators, createCustomer)
 
 
 

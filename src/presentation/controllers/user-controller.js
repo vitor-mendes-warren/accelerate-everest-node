@@ -1,3 +1,5 @@
+import { validationResult } from 'express-validator'
+
 class UserController {
 
 
@@ -8,9 +10,7 @@ class UserController {
         }
         res.send("Hello Worldsdsd!");
         res.status(200).end('success');
-        // res.status(200).send(Array < object > [
 
-        // ]);
 
     }
 
