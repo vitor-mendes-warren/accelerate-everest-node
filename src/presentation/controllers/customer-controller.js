@@ -1,6 +1,7 @@
 import { validationResult } from 'express-validator'
+import Customer from '../../domain/user/mocks/UserMock.js'
 
-class UserController {
+class CustomerController {
 
 
     createCustomer(req, res, next) {
@@ -8,17 +9,14 @@ class UserController {
         if (!errors.isEmpty()) {
             return res.status(422).json({ errors: errors.mapped() })
         }
-        res.send("Hello Worldsdsd!");
-        res.status(200).end('success');
-
-
+        res.status(200).json({ status: "success", customer_added: new Customer(req.body) });
     }
 
 
 
-    handle(req, res, next) {
-        res.send("Hello World!");
-    }
 }
 
-export default new UserController().createCustomer
+
+
+
+export default new CustomerController().createCustomer

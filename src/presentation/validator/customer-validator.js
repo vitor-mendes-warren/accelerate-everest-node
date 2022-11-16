@@ -6,14 +6,10 @@ var cpfMaxMin = ({ 'max': 14, 'min': 11 });
 var phoneMaxMin = ({ 'max': 14, 'min': 11 });
 var postalCodeMaxMin = ({ 'max': 9, 'min': 8 });
 
-function isCpfValid(value) {
-               cpf.isValid(value)
-}
-
 const customerValidators = [
-               body('full_name').isAlpha().notEmpty(),
-               body('email').isEmail().isAlpha(),
-               body('email_confirmation').isEmail().isAlpha(),
+               body('full_name').trim().escape().notEmpty({ ignore_whitespace: true }).isString(),
+               body('email').isEmail(),
+               body('email_confirmation').isEmail(),
                body('cpf').isLength({ max: cpfMaxMin.max }).customSanitizer((value) => { return value.replace(/\D/g, "") })
                               .matches(`\\d{${cpfMaxMin.min}}$`).custom(async value => {
                                              cpf.isValid(value)
