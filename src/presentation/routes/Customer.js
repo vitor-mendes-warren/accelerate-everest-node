@@ -2,12 +2,12 @@ import { Router } from 'express'
 import { body } from 'express-validator'
 
 
-import createCustomer from '../controllers/customer-controller.js'
-import customerValidators from '../validator/customer-validator.js'
+import handle from '../controllers/customer_controller.js'
+import customerValidators from '../validator/customer_validator.js'
 
-const router = Router()
-router.post('/', customerValidators, createCustomer)
+const customerRoutes = Router()
+customerRoutes.post('/', customerValidators, handle)
 
 
 
-export default router
+export default customerRoutes

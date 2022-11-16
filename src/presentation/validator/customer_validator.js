@@ -3,7 +3,7 @@ import { cpf } from 'cpf-cnpj-validator';
 import isValidCep from '@brazilian-utils/is-valid-cep';
 
 var cpfMaxMin = ({ 'max': 14, 'min': 11 });
-var phoneMaxMin = ({ 'max': 14, 'min': 11 });
+var phoneMaxMin = ({ 'max': 15, 'min': 11 });
 var postalCodeMaxMin = ({ 'max': 9, 'min': 8 });
 
 
