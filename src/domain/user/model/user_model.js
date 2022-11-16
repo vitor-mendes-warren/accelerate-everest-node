@@ -17,6 +17,6 @@ class CustomerModel {
 
 }
 
-const CustomerList = [];
+
 
 export default CustomerModel;

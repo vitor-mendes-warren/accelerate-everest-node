@@ -1,5 +1,5 @@
 import { validationResult } from 'express-validator'
-import Customer from '../../domain/user/mocks/UserMock.js'
+import Customer from '../../domain/user/model/user_model.js'
 
 const customerAddedList = [];
 class CustomerController {
@@ -12,7 +12,7 @@ class CustomerController {
         }
         var newCustomer = new Customer(req.body);
         customerAddedList.push(newCustomer);
-        console.log(`Usuarios criados ${customerAddedList}`);
+        console.log(customerAddedList);
         res.status(200).json({ status: "success", customer_created: newCustomer });
     }
 
