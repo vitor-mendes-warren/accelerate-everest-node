@@ -14,6 +14,9 @@ class CustomerModel {
                               this.address = body.address
                }
 
+
 }
+
+const CustomerList = [];
 
 export default CustomerModel;
